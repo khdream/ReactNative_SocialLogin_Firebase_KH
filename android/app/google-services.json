@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "941917286127",
+    "project_id": "tumtag-reactnative-app",
+    "storage_bucket": "tumtag-reactnative-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941917286127:android:e84c1f972e623ac411351a",
+        "android_client_info": {
+          "package_name": "com.reactnative_googlelogin_firebase_kh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "941917286127-dsitmgeknf9kota1m9ke0mu0tjbhp87d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reactnative_googlelogin_firebase_kh",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "941917286127-sbaabdmlp8hnjf8ukd6htooui68triov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnwibmQ9OuV1ymBQ4R-cN_bUrBUXsJFI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "941917286127-sbaabdmlp8hnjf8ukd6htooui68triov.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941917286127:android:85b56b3d247b3f5111351a",
+        "android_client_info": {
+          "package_name": "com.tumtag"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "941917286127-sbaabdmlp8hnjf8ukd6htooui68triov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnwibmQ9OuV1ymBQ4R-cN_bUrBUXsJFI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "941917286127-sbaabdmlp8hnjf8ukd6htooui68triov.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
