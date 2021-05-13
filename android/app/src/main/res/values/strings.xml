@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ReactNative_GoogleLogin_Firebase_KH</string>
+    <string name="facebook_app_id">964336743958925</string> <!-- facebook kh  -->
 </resources>
