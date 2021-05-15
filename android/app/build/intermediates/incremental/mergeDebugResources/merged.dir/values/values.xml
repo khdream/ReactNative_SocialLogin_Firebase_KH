@@ -425,7 +425,7 @@
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="default_web_client_id" translatable="false">941917286127-sbaabdmlp8hnjf8ukd6htooui68triov.apps.googleusercontent.com</string>
-    <string name="facebook_app_id">964336743958925</string>
+    <string name="facebook_app_id">285851963257637</string>
     <string name="gcm_defaultSenderId" translatable="false">941917286127</string>
     <string name="google_api_key" translatable="false">AIzaSyBnwibmQ9OuV1ymBQ4R-cN_bUrBUXsJFI0</string>
     <string name="google_app_id" translatable="false">1:941917286127:android:e84c1f972e623ac411351a</string>

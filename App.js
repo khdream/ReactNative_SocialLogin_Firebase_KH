@@ -3,8 +3,9 @@ import {StyleSheet, View, Button, TouchableOpacity, Text} from 'react-native';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 import {LoginManager, AccessToken} from 'react-native-fbsdk';
-// import LinkedInModal from 'react-native-linkedin';
-
+import LinkedInModal from 'react-native-linkedin';
+import CookieManager from '@react-native-cookies/cookies';
+import axios from 'axios';
 
 GoogleSignin.configure({
   webClientId:
@@ -28,8 +29,8 @@ export default class Main extends React.Component {
   };
 
   onFaceBookPress = async () => {
-    await this.onFacebookButtonPress().then(() =>
-      console.log('Signed in with Facebook!'),
+    await this.onFacebookButtonPress().then(result =>
+      console.log('Signed in with Facebook!', result),
     );
   };
 
@@ -57,10 +58,47 @@ export default class Main extends React.Component {
 
   logoutWithFacebook = () => {
     LoginManager.logOut();
-    this.setState({userInfo: {}});
   };
 
   linkedRef = React.createRef();
+
+  logoutWithLinkedin = async () => {
+    CookieManager.clearAll();
+  };
+  onSuccessLinkedinLogin = async token => {
+    console.log('####test', token.access_token);
+
+    const headers = {
+      // 'Content-Type': 'application/json',
+      // Authorization: token.access_token,
+      // Authorization: 'Bearer ' + token.access_token,
+      'Content-Type': 'application/json',
+      'x-li-format': 'json',
+
+      Authorization: "Bearer " + token.access_token,
+    };
+
+    console.log('####test', headers);
+
+    const param = {
+      q: 'members',
+      projection: '(elements*(handle~))',
+    };
+
+    axios
+      .get(
+        'https://api.linkedin.com/v2/emailAddress?q=members&projection=(elements*(handle~))',
+        {
+          headers: headers,
+        },
+      )
+      .then(response => {
+        // console.log('####email', response.data.ele ments[0]['handle~'].emailAddress);
+      })
+      .catch(error => {
+        console.log('####error', error);
+      });
+  };
 
   render() {
     return (
@@ -71,22 +109,24 @@ export default class Main extends React.Component {
         {/* facebook */}
         <Button onPress={this.onFaceBookPress} title="facebook signin 1" />
         <Text>{''}</Text>
-        <Button onPress={this.loginWithFacebook} title="facebook signin 2" />
+        <Button onPress={this.logoutWithFacebook} title="facebook logout" />
         <Text>{''}</Text>
         {/* linkedin */}
-        {/* <LinkedInModal
+        <LinkedInModal
           ref={this.linkedRef}
-          shouldGetAccessToken={false}
+          // shouldGetAccessToken={false}
           clientID="78pm2g3m1yfza6"
           clientSecret="Edgt0T4tr3FlUSdT"
           redirectUri="https://api.linkedin.com/v2/me"
           linkText="Continue with Linkedin"
-          onSuccess={token => console.log('####test', token)}
+          onSuccess={token => this.onSuccessLinkedinLogin(token)}
         />
         <Button
           onPress={() => this.linkedRef.current.open()}
           title="linkedin signin "
-        /> */}
+        />
+        <Text>{''}</Text>
+        <Button title="Linkedin Log Out" onPress={this.logoutWithLinkedin} />
 
         {/* <LinkedInModal
                 ref={this.linkedRef}
@@ -97,7 +137,6 @@ export default class Main extends React.Component {
                 linkText="Continue with Linkedin"
                 renderButton={this.renderButton}
             /> */}
-        {/* <Button title="Log Out" onPress={this.linkedRef.current.logoutAsync()} /> */}
       </View>
     );
   }
