@@ -16,7 +16,6 @@
     "react": "17.0.1",
     "react-native": "0.64.0",
     "react-native-fbsdk": "^3.0.0",
-    "react-native-linkedin": "^2.1.1",
     "react-native-webview": "^11.4.3"
   },
   "devDependencies": {
