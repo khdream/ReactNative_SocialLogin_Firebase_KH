@@ -67,24 +67,18 @@ export default class Main extends React.Component {
   };
   onSuccessLinkedinLogin = async token => {
     console.log('####test', token.access_token);
-
     const headers = {
       // 'Content-Type': 'application/json',
       // Authorization: token.access_token,
       // Authorization: 'Bearer ' + token.access_token,
       'Content-Type': 'application/json',
       'x-li-format': 'json',
-
       Authorization: "Bearer " + token.access_token,
     };
-
-    console.log('####test', headers);
-
     const param = {
       q: 'members',
       projection: '(elements*(handle~))',
     };
-
     axios
       .get(
         'https://api.linkedin.com/v2/emailAddress?q=members&projection=(elements*(handle~))',
