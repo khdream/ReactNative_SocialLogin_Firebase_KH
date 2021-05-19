@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">941917286127-sbaabdmlp8hnjf8ukd6htooui68triov.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">941917286127</string>
+    <string name="google_api_key" translatable="false">AIzaSyBnwibmQ9OuV1ymBQ4R-cN_bUrBUXsJFI0</string>
+    <string name="google_app_id" translatable="false">1:941917286127:android:e84c1f972e623ac411351a</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBnwibmQ9OuV1ymBQ4R-cN_bUrBUXsJFI0</string>
+    <string name="google_storage_bucket" translatable="false">tumtag-reactnative-app.appspot.com</string>
+    <string name="project_id" translatable="false">tumtag-reactnative-app</string>
+</resources>
